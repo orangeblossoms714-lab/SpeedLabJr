@@ -199,6 +199,7 @@ struct TimeStepperRow: View {
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
+                .buttonStyle(.borderless)
                 Text("\(value)s")
                     .frame(minWidth: 48, alignment: .center)
                     .font(.body.monospacedDigit())
@@ -207,6 +208,7 @@ struct TimeStepperRow: View {
                         .font(.title3)
                         .foregroundColor(.orange)
                 }
+                .buttonStyle(.borderless)
             }
         }
     }
@@ -228,6 +230,7 @@ struct DistanceStepperRow: View {
                         .font(.title3)
                         .foregroundColor(.secondary)
                 }
+                .buttonStyle(.borderless)
                 Text("\(value)m")
                     .frame(minWidth: 52, alignment: .center)
                     .font(.body.monospacedDigit())
@@ -236,6 +239,7 @@ struct DistanceStepperRow: View {
                         .font(.title3)
                         .foregroundColor(.orange)
                 }
+                .buttonStyle(.borderless)
             }
         }
     }
