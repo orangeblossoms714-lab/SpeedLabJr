@@ -20,7 +20,7 @@ struct CalendarView: View {
 
     private var monthStart: Date {
         let comps = calendar.dateComponents([.year, .month], from: displayedMonth)
-        return calendar.date(from: comps)!
+        return calendar.date(from: comps) ?? displayedMonth
     }
 
     private var monthTitle: String {
@@ -35,7 +35,7 @@ struct CalendarView: View {
         // Convert Sunday-based (1=Sun) to Monday-based (0=Mon)
         let leadingBlanks = (firstWeekday + 5) % 7
 
-        let daysInMonth = calendar.range(of: .day, in: .month, for: monthStart)!.count
+        let daysInMonth = calendar.range(of: .day, in: .month, for: monthStart)?.count ?? 30
 
         var dates: [Date?] = Array(repeating: nil, count: leadingBlanks)
         for day in 1...daysInMonth {

@@ -245,7 +245,10 @@ struct DistanceStepperRow: View {
 
 struct WeightField: View {
     @Binding var weightLbs: Double
+
+    // Use a local text buffer; sync bidirectionally with the binding
     @State private var weightText: String = ""
+    @State private var didAppear = false
 
     var body: some View {
         HStack {
@@ -260,8 +263,17 @@ struct WeightField: View {
                 }
         }
         .onAppear {
+            guard !didAppear else { return }
+            didAppear = true
             if weightLbs > 0 {
                 weightText = String(format: "%.1f", weightLbs)
+            }
+        }
+        .onChange(of: weightLbs) { _, newValue in
+            // Sync back if the binding changes externally and our text is stale
+            let parsed = Double(weightText) ?? 0
+            if abs(parsed - newValue) > 0.01 {
+                weightText = newValue > 0 ? String(format: "%.1f", newValue) : ""
             }
         }
     }
