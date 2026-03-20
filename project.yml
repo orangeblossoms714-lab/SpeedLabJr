@@ -35,7 +35,9 @@ targets:
     info:
       path: SpeedLabJr/Info.plist
       properties:
-        UILaunchStoryboardName: LaunchScreen
+        CFBundleIconName: AppIcon
+        UILaunchScreen:
+          UIColorName: AccentColor
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationPortraitUpsideDown
@@ -44,5 +46,5 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-        NSHealthShareUsageDescription: SpeedLabJr may optionally read health data.
+        NSHealthShareUsageDescription: Speed Lab Jr. may optionally read health data.
         CFBundleDisplayName: Speed Lab Jr.
