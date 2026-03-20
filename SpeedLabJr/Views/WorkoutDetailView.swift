@@ -261,6 +261,8 @@ struct ExerciseRow: View {
     let color: Color
     let onLog: () -> Void
 
+    @State private var showTutorial = false
+
     var body: some View {
         HStack(alignment: .center, spacing: 14) {
             // Icon
@@ -283,6 +285,15 @@ struct ExerciseRow: View {
                         .foregroundColor(.secondary)
                         .lineLimit(2)
                 }
+                // Tutorial link
+                Button {
+                    showTutorial = true
+                } label: {
+                    Label("Watch tutorial", systemImage: "play.circle")
+                        .font(.caption)
+                        .foregroundColor(.blue)
+                }
+                .buttonStyle(.borderless)
             }
 
             Spacer()
@@ -309,12 +320,16 @@ struct ExerciseRow: View {
                             .background(log == nil ? color : Color.green)
                             .clipShape(Capsule())
                     }
+                    .buttonStyle(.borderless)
                 }
             }
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
         .background(Color(.systemBackground))
+        .sheet(isPresented: $showTutorial) {
+            ExerciseTutorialSheet(exercise: exercise)
+        }
     }
 
     private var iconName: String {

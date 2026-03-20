@@ -16,6 +16,11 @@ struct ContentView: View {
                     Label("Today", systemImage: "bolt.fill")
                 }
 
+            WeeklySummaryView()
+                .tabItem {
+                    Label("This Week", systemImage: "star.circle.fill")
+                }
+
             ProgressChartsView()
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
