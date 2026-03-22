@@ -10,6 +10,7 @@ struct TodayView: View {
 
     @Query(sort: \WorkoutSession.date) private var sessions: [WorkoutSession]
     @Query private var goals: [UserGoal]
+    @Query(sort: \AchievementRecord.earnedAt, order: .reverse) private var recentAchievements: [AchievementRecord]
     
     @State private var showWorkout = false
     @State private var showSkipConfirm = false
@@ -31,6 +32,11 @@ struct TodayView: View {
         guard let s = displaySession else { return false }
         return Calendar.current.isDateInToday(s.date)
     }
+    
+    private var thisWeeksAchievements: [AchievementRecord] {
+        let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date()
+        return recentAchievements.filter { $0.earnedAt >= oneWeekAgo }
+    }
 
     // MARK: - Body
 
@@ -48,6 +54,7 @@ struct TodayView: View {
                         if isToday {
                             programPhaseCard
                         }
+                        thisWeekTrophies
                     } else {
                         emptyState
                     }
@@ -250,6 +257,41 @@ struct TodayView: View {
         .padding()
         .background(Color(.secondarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+    
+    @ViewBuilder
+    private var thisWeekTrophies: some View {
+        let weekly = thisWeeksAchievements
+        if !weekly.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("THIS WEEK'S TROPHIES")
+                    .font(.caption.weight(.bold))
+                    .foregroundColor(.secondary)
+                    .tracking(1.5)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(weekly) { record in
+                            let def = AchievementEngine.get(record.achievementID)
+                            VStack(spacing: 6) {
+                                Text(def.emoji)
+                                    .font(.system(size: 32))
+                                    .frame(width: 60, height: 60)
+                                    .background(Color.yellow.opacity(0.2))
+                                    .clipShape(Circle())
+                                
+                                Text(def.name)
+                                    .font(.caption2.weight(.bold))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                                    .frame(width: 70)
+                            }
+                        }
+                    }
+                }
+            }
+            .padding(.top, 8)
+        }
     }
 
     private var emptyState: some View {

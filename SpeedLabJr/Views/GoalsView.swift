@@ -7,6 +7,7 @@ import SwiftData
 struct GoalsView: View {
     @Environment(\.modelContext) private var context
     @Query private var allGoals: [UserGoal]
+    @Query private var earnedAchievements: [AchievementRecord]
     
     @State private var weeklyGoalValue: Double = 4.0
     
@@ -28,6 +29,16 @@ struct GoalsView: View {
     private var exerciseGoals: [UserGoal] {
         allGoals.filter { $0.typeRaw == "exerciseTarget" }
     }
+    
+    private var achievementCounts: [String: Int] {
+        var counts: [String: Int] = [:]
+        for r in earnedAchievements {
+            counts[r.achievementID, default: 0] += 1
+        }
+        return counts
+    }
+    
+    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 16)]
     
     var body: some View {
         NavigationStack {
@@ -66,8 +77,20 @@ struct GoalsView: View {
                             .foregroundColor(.secondary)
                     }
                 }
+                
+                Section(header: Text("Trophy Case").font(.headline)) {
+                    LazyVGrid(columns: columns, spacing: 24) {
+                        ForEach(AchievementEngine.allAchievements) { def in
+                            let count = achievementCounts[def.id] ?? 0
+                            AchievementBadgeView(def: def, count: count)
+                        }
+                    }
+                    .padding(.vertical, 16)
+                }
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
             }
-            .navigationTitle("Goals")
+            .navigationTitle("Goals & Trophies")
             .onAppear {
                 if let wg = weeklyGoal {
                     weeklyGoalValue = wg.targetValue
@@ -129,6 +152,65 @@ struct GoalsView: View {
             let goal = exerciseGoals[index]
             context.delete(goal)
         }
+    }
+}
+
+// MARK: - AchievementBadgeView
+
+struct AchievementBadgeView: View {
+    let def: AchievementDefinition
+    let count: Int
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            ZStack {
+                Circle()
+                    .fill(badgeGradient)
+                    .frame(width: 80, height: 80)
+                    .shadow(color: shadowColor, radius: count >= 20 ? 12 : 5, y: 4)
+                
+                Text(def.emoji)
+                    .font(.system(size: 36))
+                
+                if count > 0 {
+                    Text("x\(count)")
+                        .font(.caption2.weight(.black))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.black.opacity(0.65))
+                        .clipShape(Capsule())
+                        .offset(y: 40)
+                }
+            }
+            .grayscale(count == 0 ? 0.99 : 0.0)
+            .opacity(count == 0 ? 0.3 : 1.0)
+            
+            Text(def.name)
+                .font(.caption2.weight(.bold))
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+    }
+    
+    private var badgeGradient: LinearGradient {
+        let colors: [Color]
+        if count == 0 { 
+            colors = [Color.gray.opacity(0.3), Color.gray.opacity(0.4)]
+        } else if count >= 20 { 
+            colors = [Color.cyan, Color.blue] // Diamond
+        } else if count >= 10 { 
+            colors = [Color.yellow, Color.orange] // Gold
+        } else if count >= 5 { 
+            colors = [Color(white: 0.8), Color(white: 0.6)]    // Silver
+        } else { 
+            colors = [Color.brown.opacity(0.8), Color.brown.opacity(0.6)] // Bronze
+        }
+        return LinearGradient(colors: colors, startPoint: .topLeading, endPoint: .bottomTrailing)
+    }
+    
+    private var shadowColor: Color {
+        count >= 20 ? Color.cyan.opacity(0.8) : Color.black.opacity(0.15)
     }
 }
 

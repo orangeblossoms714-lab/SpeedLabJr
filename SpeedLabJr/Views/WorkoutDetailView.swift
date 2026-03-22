@@ -10,6 +10,8 @@ import SwiftData
 struct WorkoutDetailView: View {
 
     @Environment(\.modelContext) private var context
+    @Query private var allSessions: [WorkoutSession]
+    @Query private var goals: [UserGoal]
     @Environment(\.dismiss) private var dismiss
 
     @Bindable var session: WorkoutSession
@@ -204,6 +206,9 @@ struct WorkoutDetailView: View {
     private func markDone() {
         session.status = .completed
         session.completedAt = Date()
+        
+        // Evaluate Achievements
+        let _ = AchievementEngine.evaluate(session: session, context: context, allSessions: allSessions, goals: goals)
         
         // Trigger confetti gamification
         showConfetti = true
