@@ -25,6 +25,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
                 }
+            GoalsView()
+                .tabItem {
+                    Label("Goals", systemImage: "target")
+                }
         }
         .tint(.orange)
     }
@@ -32,6 +36,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: [WorkoutSession.self, ExerciseLog.self],
+        .modelContainer(for: [WorkoutSession.self, ExerciseLog.self, UserGoal.self],
                         inMemory: true)
 }

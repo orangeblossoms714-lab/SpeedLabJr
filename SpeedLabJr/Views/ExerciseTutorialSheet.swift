@@ -1,30 +1,10 @@
 // ExerciseTutorialSheet.swift
 // SpeedLabJr
 //
-// In-app YouTube tutorial browser for each exercise.
-// Uses SFSafariViewController so the user gets full browser features,
-// YouTube account, autoplay, etc. — without needing an API key.
+// In-app Video player for AI generated exercise tutorials.
 
 import SwiftUI
-import SafariServices
-
-// MARK: - Safari wrapper
-
-struct SafariView: UIViewControllerRepresentable {
-    let url: URL
-
-    func makeUIViewController(context: Context) -> SFSafariViewController {
-        let config = SFSafariViewController.Configuration()
-        config.entersReaderIfAvailable = false
-        config.barCollapsingEnabled    = true
-        let vc = SFSafariViewController(url: url, configuration: config)
-        vc.preferredBarTintColor      = UIColor(red: 1, green: 0.5, blue: 0, alpha: 1)
-        vc.preferredControlTintColor  = .white
-        return vc
-    }
-
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
-}
+import AVKit
 
 // MARK: - ExerciseTutorialSheet
 
@@ -32,27 +12,33 @@ struct ExerciseTutorialSheet: View {
 
     let exercise: Exercise
     @Environment(\.dismiss) private var dismiss
+    
+    // Auto-playing looping video player
+    @State private var player: AVPlayer?
 
-    // Builds a focused YouTube search URL for the exercise
-    private var tutorialURL: URL {
-        let base    = exercise.name
-        let section = exercise.section
-        // Add context so results are sport-specific
-        let context: String
-        switch section {
-        case "SPRINT DRILLS", "SPEED ENDURANCE RUNS", "PLYOMETRIC FINISHER":
-            context = "track and field sprint drill"
-        case "LOWER BODY STRENGTH", "CORE & STABILITY", "BALANCE & BODY CONTROL":
-            context = "strength exercise form tutorial"
-        case "MOBILITY FLOW", "COOL-DOWN":
-            context = "flexibility stretch how to"
-        default:
-            context = "exercise tutorial for beginners"
+    private func setupPlayer() {
+        let filename = exercise.name.lowercased()
+            .replacingOccurrences(of: " ", with: "-")
+            .replacingOccurrences(of: "/", with: "-")
+            .replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+            .replacingOccurrences(of: "+", with: "and")
+            .replacingOccurrences(of: "'", with: "")
+            .replacingOccurrences(of: "---", with: "-")
+            .replacingOccurrences(of: "--", with: "-")
+        
+        if let url = Bundle.main.url(forResource: filename, withExtension: "mp4") {
+            let p = AVPlayer(url: url)
+            p.actionAtItemEnd = .none // loop
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: p.currentItem, queue: .main) { _ in
+                p.seek(to: .zero)
+                p.play()
+            }
+            player = p
+            p.play()
+        } else {
+            print("Video not found: \(filename).mp4")
         }
-        let query = "\(base) \(context)"
-            .lowercased()
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        return URL(string: "https://www.youtube.com/results?search_query=\(query)")!
     }
 
     var body: some View {
@@ -82,9 +68,22 @@ struct ExerciseTutorialSheet: View {
 
                 Divider()
 
-                // YouTube results
-                SafariView(url: tutorialURL)
-                    .ignoresSafeArea(edges: .bottom)
+                // Embedded Video Player
+                if let player = player {
+                    VideoPlayer(player: player)
+                        .ignoresSafeArea(edges: .bottom)
+                } else {
+                    VStack {
+                        Spacer()
+                        Image(systemName: "video.slash")
+                            .font(.largeTitle)
+                            .foregroundColor(.secondary)
+                        Text("Video tutorial not available.")
+                            .foregroundColor(.secondary)
+                            .padding(.top, 8)
+                        Spacer()
+                    }
+                }
             }
             .navigationTitle("Tutorial")
             .navigationBarTitleDisplayMode(.inline)
@@ -92,6 +91,12 @@ struct ExerciseTutorialSheet: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Done") { dismiss() }
                 }
+            }
+            .onAppear {
+                setupPlayer()
+            }
+            .onDisappear {
+                player?.pause()
             }
         }
         .presentationDetents([.large])

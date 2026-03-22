@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0859BC9A2E21C8DFD770F586 /* easy-jog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9581DA79C6FA618D3F781B6 /* easy-jog.mp4 */; };
+		0A8F8AA6C03D344B414493F9 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D05ECEE67DB5C3C990103 /* ScheduleManager.swift */; };
+		0BCB5ACB6AAE81174CFE5725 /* dead-bug.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 831A9AE72B6C89B383EE6E6D /* dead-bug.mp4 */; };
+		0D9E8BBE216906B220CA5677 /* standing-calf-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1E470F42255AC60E091E8D59 /* standing-calf-stretch.mp4 */; };
+		0E7F68168ADAAC8AE08EE5FA /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C336889514D027D2A04F29A4 /* GoalsView.swift */; };
+		162EE1358BF5E73767DE1E84 /* ExerciseTutorialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7170963F6173E3EEB6852 /* ExerciseTutorialSheet.swift */; };
+		174E09CD880B80AFE7DECEFF /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB71552FBCBE2E19A5716253 /* WorkoutDetailView.swift */; };
+		20689393A47C4A663856C2ED /* reverse-lunges.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40A47FA23A34BD9E453C318D /* reverse-lunges.mp4 */; };
+		22329E48A3681565E21AB8E1 /* plank-hold.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2815499AFEFAD2B8C03A276D /* plank-hold.mp4 */; };
+		2C235AB089A44C6C9A1D6787 /* WorkoutProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EAAD06B9D37DF853C1237 /* WorkoutProgram.swift */; };
+		330C9A0C5E5A84EC630E45C4 /* hamstring-stretch-standing.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 923BC3E59C6703161A98C7DC /* hamstring-stretch-standing.mp4 */; };
+		352921FC8F890AED45FEBD49 /* glute-bridges.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 639DA473980BDB11791DB851 /* glute-bridges.mp4 */; };
+		3656D48EBA3B4927E8B4F36E /* thread-the-needle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 76791777512554B740D680D0 /* thread-the-needle.mp4 */; };
+		37812F01AEBDF79941140945 /* pogo-hops.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 800EC83659AE2C20333D14A4 /* pogo-hops.mp4 */; };
+		396F78332988F6164073379D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4C7AAB77A2BBEA31D052A8 /* ContentView.swift */; };
+		3BD3740D2DB94FBA840DE6D1 /* standing-quad-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BDE988E95A4FC8682451BF5B /* standing-quad-stretch.mp4 */; };
+		3D7001C7C925BB6300B3564A /* worlds-greatest-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B1BC706E0A6F3ECEA4A0E9C /* worlds-greatest-stretch.mp4 */; };
+		472739267B7BEFFC2C5ACF23 /* single-leg-balance.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 828C7A19BC496EDA94715EA5 /* single-leg-balance.mp4 */; };
+		4CBCA9E274C2D9D18955E84F /* acceleration-sprints.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3E38514D7D7E12973536AD43 /* acceleration-sprints.mp4 */; };
+		4EF6CC0EF5A806B46D423105 /* a-skips.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD28E783912B6226F9614380 /* a-skips.mp4 */; };
+		502197AADE9A4566251247B9 /* 60m-repeats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 36218D6B2280CF7F5058F592 /* 60m-repeats.mp4 */; };
+		5914E0955B52898B1865F8D6 /* ankle-circles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4ABC1800239F286FD6F8FE77 /* ankle-circles.mp4 */; };
+		615C140C229C295BE7330D37 /* heel-to-toe-walk-tightrope.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 401C9ED0743BE3E2FE6B63A5 /* heel-to-toe-walk-tightrope.mp4 */; };
+		683640EA5E303B9EBEED90AD /* ExerciseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C14F59EBE3CD7BA67865F /* ExerciseLog.swift */; };
+		6A7DDAAF9C21FF743D6C72F7 /* AnimalSpeedComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC3DECE858DA02FC006FF9F /* AnimalSpeedComparison.swift */; };
+		6D24FE507EF57193E9AC0F3E /* arm-circles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C41FDAAAD1320D3B6AEBA038 /* arm-circles.mp4 */; };
+		6E545986CAE7EDF1FAAD4F31 /* side-plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE65A6D9B4269354E038992B /* side-plank.mp4 */; };
+		7592F870CAED4597B79B2190 /* hip-flexor-lunge-and-reach.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D7CAA88277B3B604FE2D388F /* hip-flexor-lunge-and-reach.mp4 */; };
+		7881266320F972D633A108E7 /* broad-jumps.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C10C2AEC78FE936EEDBCFA7E /* broad-jumps.mp4 */; };
+		7F49A6446D2184C2B76911E8 /* easy-jog-or-brisk-walk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9581B08996C225ED0C29B3F4 /* easy-jog-or-brisk-walk.mp4 */; };
+		7FDEEEE519B3A702253D53F8 /* SpeedLabJrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF57E9038884226B6E842B /* SpeedLabJrApp.swift */; };
+		80EB1B204D0118D0DE3F2054 /* bounding.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F4CBD42FFDE1716B7C346300 /* bounding.mp4 */; };
+		87CBCDE027E59FD07DF1A803 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DEB4F45D7C5DA3B9F04C84 /* CalendarView.swift */; };
+		8AB3BF9525FA9123758055A5 /* high-knees.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0484A2A1F98E24CC2FAFDBD1 /* high-knees.mp4 */; };
+		8B5A403AE4A74CB89A81417E /* single-leg-rdl-bodyweight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A48F166AA69E5D44C17D5035 /* single-leg-rdl-bodyweight.mp4 */; };
+		93D4040D8A131039E5DEDADB /* 90-90-hip-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CF8F8AB2A701281A650C0 /* 90-90-hip-stretch.mp4 */; };
+		94B60F31E1F1167A45D43F93 /* lateral-hops-over-line.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 85ED4DAAF3DBB97BF5CC4A90 /* lateral-hops-over-line.mp4 */; };
+		9A2D1C61602E2F4D7CEA6BD5 /* carioca-grapevine.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD8FEEB470EFBB859EE03E39 /* carioca-grapevine.mp4 */; };
+		A1DE84362F7A0B6FAA92B551 /* ProgressChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AE07A13A419CC1D73CAF87 /* ProgressChartsView.swift */; };
+		ABD6685EB12712FA3684139E /* bodyweight-squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9875C23D719DD84ADDF9C70D /* bodyweight-squats.mp4 */; };
+		C147C40A2430916B89C2735D /* LogExerciseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A270801BDCE0E59A4B2EA1 /* LogExerciseSheet.swift */; };
+		C616ACB9D0DFD1DE017D2FB4 /* WeeklySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13D1524314CB0ED49C4A0B /* WeeklySummaryView.swift */; };
+		CA5DA29504B7001DB25DE9C2 /* pigeon-pose.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5880F0CB7E45F195B6BB175E /* pigeon-pose.mp4 */; };
+		CA5EB6DD360747D6C159C529 /* seated-hamstring-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 41138BDEBF0C0DC09C7F695D /* seated-hamstring-stretch.mp4 */; };
+		CCDE8D77147DAD1190C15702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353EB592A454C308C20ABABD /* Assets.xcassets */; };
+		D6B9C2CA13023FC64CF53701 /* leg-swings-front-back.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6363503D8461E4F6C8C7F69B /* leg-swings-front-back.mp4 */; };
+		D7059FE9A90AE9355C675412 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B8D09E929D868814DA9C2 /* TodayView.swift */; };
+		D818FDA31C287B09FFB6893B /* childs-pose.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5F91554B6B1EB7842F942563 /* childs-pose.mp4 */; };
+		DDF88B680FEAE178E7146ACC /* easy-walk.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 99BB12DC0579920328F8BEB0 /* easy-walk.mp4 */; };
+		DEBD955B9E3B061B39F99C91 /* hip-flexor-stretch-lunge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 29E40573ECCA298054410E1D /* hip-flexor-stretch-lunge.mp4 */; };
+		E367725D3BF80C56890C2CA1 /* hip-circles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40041E05423581518248523F /* hip-circles.mp4 */; };
+		E4694D1C9AE6805E4110CB8A /* butt-kicks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52AC768EF7407EBE12F61A46 /* butt-kicks.mp4 */; };
+		E6E17A9F8F356215C0F8BA2B /* cat-cow-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 58A9230F81EB19FCB79DBC57 /* cat-cow-stretch.mp4 */; };
+		E9B9031D6A24E4278B32630D /* UserGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAF25E6698F0733C157FC52 /* UserGoal.swift */; };
+		EB1CCE9FC2F9A2BBF798CF01 /* falling-starts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3AFDD928AFC25BEAEB7B92EE /* falling-starts.mp4 */; };
+		EBC59EE650E57701AEAD9DCD /* stride-outs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AE6F930DB82047D53DD81919 /* stride-outs.mp4 */; };
+		F44C667115015A33F3AEE5D6 /* flying-20s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 94B6B7CE8C0859D0D7442D82 /* flying-20s.mp4 */; };
+		F64BB2811FBD5E723EF7C2A9 /* b-skips.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DBCBD7B8A5A7184092BC49BC /* b-skips.mp4 */; };
+		F93CE8664917A89E1F29ADE2 /* walking-lunges.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C48AF0BEB0867D727F9C801E /* walking-lunges.mp4 */; };
+		F9505A5EAACC73BEB79DF3B3 /* inchworm-walk-outs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 100E0447C45245F5AD2A341A /* inchworm-walk-outs.mp4 */; };
+		F9A61019368A9667BFC0644F /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675BAD0829A815CA19A4DCBB /* WorkoutSession.swift */; };
+		F9B729966D1CC1CB76C75F93 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED1783BB4AEB0ADD7C296928 /* sample.mp4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0484A2A1F98E24CC2FAFDBD1 /* high-knees.mp4 */ = {isa = PBXFileReference; path = "high-knees.mp4"; sourceTree = "<group>"; };
+		100E0447C45245F5AD2A341A /* inchworm-walk-outs.mp4 */ = {isa = PBXFileReference; path = "inchworm-walk-outs.mp4"; sourceTree = "<group>"; };
+		1B0C14F59EBE3CD7BA67865F /* ExerciseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLog.swift; sourceTree = "<group>"; };
+		1E470F42255AC60E091E8D59 /* standing-calf-stretch.mp4 */ = {isa = PBXFileReference; path = "standing-calf-stretch.mp4"; sourceTree = "<group>"; };
+		2815499AFEFAD2B8C03A276D /* plank-hold.mp4 */ = {isa = PBXFileReference; path = "plank-hold.mp4"; sourceTree = "<group>"; };
+		29E40573ECCA298054410E1D /* hip-flexor-stretch-lunge.mp4 */ = {isa = PBXFileReference; path = "hip-flexor-stretch-lunge.mp4"; sourceTree = "<group>"; };
+		2B13D1524314CB0ED49C4A0B /* WeeklySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySummaryView.swift; sourceTree = "<group>"; };
+		327EBC59C7FA2F16547647FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		353EB592A454C308C20ABABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		36218D6B2280CF7F5058F592 /* 60m-repeats.mp4 */ = {isa = PBXFileReference; path = "60m-repeats.mp4"; sourceTree = "<group>"; };
+		3AFDD928AFC25BEAEB7B92EE /* falling-starts.mp4 */ = {isa = PBXFileReference; path = "falling-starts.mp4"; sourceTree = "<group>"; };
+		3E38514D7D7E12973536AD43 /* acceleration-sprints.mp4 */ = {isa = PBXFileReference; path = "acceleration-sprints.mp4"; sourceTree = "<group>"; };
+		40041E05423581518248523F /* hip-circles.mp4 */ = {isa = PBXFileReference; path = "hip-circles.mp4"; sourceTree = "<group>"; };
+		401C9ED0743BE3E2FE6B63A5 /* heel-to-toe-walk-tightrope.mp4 */ = {isa = PBXFileReference; path = "heel-to-toe-walk-tightrope.mp4"; sourceTree = "<group>"; };
+		40A47FA23A34BD9E453C318D /* reverse-lunges.mp4 */ = {isa = PBXFileReference; path = "reverse-lunges.mp4"; sourceTree = "<group>"; };
+		41138BDEBF0C0DC09C7F695D /* seated-hamstring-stretch.mp4 */ = {isa = PBXFileReference; path = "seated-hamstring-stretch.mp4"; sourceTree = "<group>"; };
+		4ABC1800239F286FD6F8FE77 /* ankle-circles.mp4 */ = {isa = PBXFileReference; path = "ankle-circles.mp4"; sourceTree = "<group>"; };
+		50A270801BDCE0E59A4B2EA1 /* LogExerciseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogExerciseSheet.swift; sourceTree = "<group>"; };
+		52AC768EF7407EBE12F61A46 /* butt-kicks.mp4 */ = {isa = PBXFileReference; path = "butt-kicks.mp4"; sourceTree = "<group>"; };
+		5880F0CB7E45F195B6BB175E /* pigeon-pose.mp4 */ = {isa = PBXFileReference; path = "pigeon-pose.mp4"; sourceTree = "<group>"; };
+		58A9230F81EB19FCB79DBC57 /* cat-cow-stretch.mp4 */ = {isa = PBXFileReference; path = "cat-cow-stretch.mp4"; sourceTree = "<group>"; };
+		5F91554B6B1EB7842F942563 /* childs-pose.mp4 */ = {isa = PBXFileReference; path = "childs-pose.mp4"; sourceTree = "<group>"; };
+		6363503D8461E4F6C8C7F69B /* leg-swings-front-back.mp4 */ = {isa = PBXFileReference; path = "leg-swings-front-back.mp4"; sourceTree = "<group>"; };
+		639DA473980BDB11791DB851 /* glute-bridges.mp4 */ = {isa = PBXFileReference; path = "glute-bridges.mp4"; sourceTree = "<group>"; };
+		675BAD0829A815CA19A4DCBB /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
+		6B1BC706E0A6F3ECEA4A0E9C /* worlds-greatest-stretch.mp4 */ = {isa = PBXFileReference; path = "worlds-greatest-stretch.mp4"; sourceTree = "<group>"; };
+		76791777512554B740D680D0 /* thread-the-needle.mp4 */ = {isa = PBXFileReference; path = "thread-the-needle.mp4"; sourceTree = "<group>"; };
+		7C3D05ECEE67DB5C3C990103 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		7F9CF8F8AB2A701281A650C0 /* 90-90-hip-stretch.mp4 */ = {isa = PBXFileReference; path = "90-90-hip-stretch.mp4"; sourceTree = "<group>"; };
+		800EC83659AE2C20333D14A4 /* pogo-hops.mp4 */ = {isa = PBXFileReference; path = "pogo-hops.mp4"; sourceTree = "<group>"; };
+		828C7A19BC496EDA94715EA5 /* single-leg-balance.mp4 */ = {isa = PBXFileReference; path = "single-leg-balance.mp4"; sourceTree = "<group>"; };
+		831A9AE72B6C89B383EE6E6D /* dead-bug.mp4 */ = {isa = PBXFileReference; path = "dead-bug.mp4"; sourceTree = "<group>"; };
+		85ED4DAAF3DBB97BF5CC4A90 /* lateral-hops-over-line.mp4 */ = {isa = PBXFileReference; path = "lateral-hops-over-line.mp4"; sourceTree = "<group>"; };
+		923BC3E59C6703161A98C7DC /* hamstring-stretch-standing.mp4 */ = {isa = PBXFileReference; path = "hamstring-stretch-standing.mp4"; sourceTree = "<group>"; };
+		94B6B7CE8C0859D0D7442D82 /* flying-20s.mp4 */ = {isa = PBXFileReference; path = "flying-20s.mp4"; sourceTree = "<group>"; };
+		9581B08996C225ED0C29B3F4 /* easy-jog-or-brisk-walk.mp4 */ = {isa = PBXFileReference; path = "easy-jog-or-brisk-walk.mp4"; sourceTree = "<group>"; };
+		980B8D09E929D868814DA9C2 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		9875C23D719DD84ADDF9C70D /* bodyweight-squats.mp4 */ = {isa = PBXFileReference; path = "bodyweight-squats.mp4"; sourceTree = "<group>"; };
+		99BB12DC0579920328F8BEB0 /* easy-walk.mp4 */ = {isa = PBXFileReference; path = "easy-walk.mp4"; sourceTree = "<group>"; };
+		9AC3DECE858DA02FC006FF9F /* AnimalSpeedComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSpeedComparison.swift; sourceTree = "<group>"; };
+		9E4C7AAB77A2BBEA31D052A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9FAF25E6698F0733C157FC52 /* UserGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGoal.swift; sourceTree = "<group>"; };
+		A1A4D3B814C5EF29119F930C /* SpeedLabJr.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SpeedLabJr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A48F166AA69E5D44C17D5035 /* single-leg-rdl-bodyweight.mp4 */ = {isa = PBXFileReference; path = "single-leg-rdl-bodyweight.mp4"; sourceTree = "<group>"; };
+		A9BF57E9038884226B6E842B /* SpeedLabJrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLabJrApp.swift; sourceTree = "<group>"; };
+		A9C7170963F6173E3EEB6852 /* ExerciseTutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTutorialSheet.swift; sourceTree = "<group>"; };
+		AB71552FBCBE2E19A5716253 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		AE6F930DB82047D53DD81919 /* stride-outs.mp4 */ = {isa = PBXFileReference; path = "stride-outs.mp4"; sourceTree = "<group>"; };
+		B95EAAD06B9D37DF853C1237 /* WorkoutProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutProgram.swift; sourceTree = "<group>"; };
+		BD28E783912B6226F9614380 /* a-skips.mp4 */ = {isa = PBXFileReference; path = "a-skips.mp4"; sourceTree = "<group>"; };
+		BDE988E95A4FC8682451BF5B /* standing-quad-stretch.mp4 */ = {isa = PBXFileReference; path = "standing-quad-stretch.mp4"; sourceTree = "<group>"; };
+		C10C2AEC78FE936EEDBCFA7E /* broad-jumps.mp4 */ = {isa = PBXFileReference; path = "broad-jumps.mp4"; sourceTree = "<group>"; };
+		C336889514D027D2A04F29A4 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
+		C41FDAAAD1320D3B6AEBA038 /* arm-circles.mp4 */ = {isa = PBXFileReference; path = "arm-circles.mp4"; sourceTree = "<group>"; };
+		C48AF0BEB0867D727F9C801E /* walking-lunges.mp4 */ = {isa = PBXFileReference; path = "walking-lunges.mp4"; sourceTree = "<group>"; };
+		C6DEB4F45D7C5DA3B9F04C84 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		CD8FEEB470EFBB859EE03E39 /* carioca-grapevine.mp4 */ = {isa = PBXFileReference; path = "carioca-grapevine.mp4"; sourceTree = "<group>"; };
+		CE65A6D9B4269354E038992B /* side-plank.mp4 */ = {isa = PBXFileReference; path = "side-plank.mp4"; sourceTree = "<group>"; };
+		D3AE07A13A419CC1D73CAF87 /* ProgressChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartsView.swift; sourceTree = "<group>"; };
+		D7CAA88277B3B604FE2D388F /* hip-flexor-lunge-and-reach.mp4 */ = {isa = PBXFileReference; path = "hip-flexor-lunge-and-reach.mp4"; sourceTree = "<group>"; };
+		D9581DA79C6FA618D3F781B6 /* easy-jog.mp4 */ = {isa = PBXFileReference; path = "easy-jog.mp4"; sourceTree = "<group>"; };
+		DBCBD7B8A5A7184092BC49BC /* b-skips.mp4 */ = {isa = PBXFileReference; path = "b-skips.mp4"; sourceTree = "<group>"; };
+		ED1783BB4AEB0ADD7C296928 /* sample.mp4 */ = {isa = PBXFileReference; path = sample.mp4; sourceTree = "<group>"; };
+		F4CBD42FFDE1716B7C346300 /* bounding.mp4 */ = {isa = PBXFileReference; path = bounding.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		141F7683C84538DB99DE8E6C /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				36218D6B2280CF7F5058F592 /* 60m-repeats.mp4 */,
+				7F9CF8F8AB2A701281A650C0 /* 90-90-hip-stretch.mp4 */,
+				BD28E783912B6226F9614380 /* a-skips.mp4 */,
+				3E38514D7D7E12973536AD43 /* acceleration-sprints.mp4 */,
+				4ABC1800239F286FD6F8FE77 /* ankle-circles.mp4 */,
+				C41FDAAAD1320D3B6AEBA038 /* arm-circles.mp4 */,
+				DBCBD7B8A5A7184092BC49BC /* b-skips.mp4 */,
+				9875C23D719DD84ADDF9C70D /* bodyweight-squats.mp4 */,
+				F4CBD42FFDE1716B7C346300 /* bounding.mp4 */,
+				C10C2AEC78FE936EEDBCFA7E /* broad-jumps.mp4 */,
+				52AC768EF7407EBE12F61A46 /* butt-kicks.mp4 */,
+				CD8FEEB470EFBB859EE03E39 /* carioca-grapevine.mp4 */,
+				58A9230F81EB19FCB79DBC57 /* cat-cow-stretch.mp4 */,
+				5F91554B6B1EB7842F942563 /* childs-pose.mp4 */,
+				831A9AE72B6C89B383EE6E6D /* dead-bug.mp4 */,
+				9581B08996C225ED0C29B3F4 /* easy-jog-or-brisk-walk.mp4 */,
+				D9581DA79C6FA618D3F781B6 /* easy-jog.mp4 */,
+				99BB12DC0579920328F8BEB0 /* easy-walk.mp4 */,
+				3AFDD928AFC25BEAEB7B92EE /* falling-starts.mp4 */,
+				94B6B7CE8C0859D0D7442D82 /* flying-20s.mp4 */,
+				639DA473980BDB11791DB851 /* glute-bridges.mp4 */,
+				923BC3E59C6703161A98C7DC /* hamstring-stretch-standing.mp4 */,
+				401C9ED0743BE3E2FE6B63A5 /* heel-to-toe-walk-tightrope.mp4 */,
+				0484A2A1F98E24CC2FAFDBD1 /* high-knees.mp4 */,
+				40041E05423581518248523F /* hip-circles.mp4 */,
+				D7CAA88277B3B604FE2D388F /* hip-flexor-lunge-and-reach.mp4 */,
+				29E40573ECCA298054410E1D /* hip-flexor-stretch-lunge.mp4 */,
+				100E0447C45245F5AD2A341A /* inchworm-walk-outs.mp4 */,
+				85ED4DAAF3DBB97BF5CC4A90 /* lateral-hops-over-line.mp4 */,
+				6363503D8461E4F6C8C7F69B /* leg-swings-front-back.mp4 */,
+				5880F0CB7E45F195B6BB175E /* pigeon-pose.mp4 */,
+				2815499AFEFAD2B8C03A276D /* plank-hold.mp4 */,
+				800EC83659AE2C20333D14A4 /* pogo-hops.mp4 */,
+				40A47FA23A34BD9E453C318D /* reverse-lunges.mp4 */,
+				ED1783BB4AEB0ADD7C296928 /* sample.mp4 */,
+				41138BDEBF0C0DC09C7F695D /* seated-hamstring-stretch.mp4 */,
+				CE65A6D9B4269354E038992B /* side-plank.mp4 */,
+				828C7A19BC496EDA94715EA5 /* single-leg-balance.mp4 */,
+				A48F166AA69E5D44C17D5035 /* single-leg-rdl-bodyweight.mp4 */,
+				1E470F42255AC60E091E8D59 /* standing-calf-stretch.mp4 */,
+				BDE988E95A4FC8682451BF5B /* standing-quad-stretch.mp4 */,
+				AE6F930DB82047D53DD81919 /* stride-outs.mp4 */,
+				76791777512554B740D680D0 /* thread-the-needle.mp4 */,
+				C48AF0BEB0867D727F9C801E /* walking-lunges.mp4 */,
+				6B1BC706E0A6F3ECEA4A0E9C /* worlds-greatest-stretch.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		1A43C3F43A5A1769870DB9F5 /* SpeedLabJr */ = {
+			isa = PBXGroup;
+			children = (
+				522A48FBCCD7CD82E08E9224 /* Models */,
+				141F7683C84538DB99DE8E6C /* Videos */,
+				DE759F4C672A6C731BD09C36 /* ViewModels */,
+				9D1720A509A0A5ACE8B67058 /* Views */,
+				353EB592A454C308C20ABABD /* Assets.xcassets */,
+				9E4C7AAB77A2BBEA31D052A8 /* ContentView.swift */,
+				327EBC59C7FA2F16547647FA /* Info.plist */,
+				A9BF57E9038884226B6E842B /* SpeedLabJrApp.swift */,
+			);
+			path = SpeedLabJr;
+			sourceTree = "<group>";
+		};
+		522A48FBCCD7CD82E08E9224 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9AC3DECE858DA02FC006FF9F /* AnimalSpeedComparison.swift */,
+				1B0C14F59EBE3CD7BA67865F /* ExerciseLog.swift */,
+				9FAF25E6698F0733C157FC52 /* UserGoal.swift */,
+				B95EAAD06B9D37DF853C1237 /* WorkoutProgram.swift */,
+				675BAD0829A815CA19A4DCBB /* WorkoutSession.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D1720A509A0A5ACE8B67058 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6DEB4F45D7C5DA3B9F04C84 /* CalendarView.swift */,
+				A9C7170963F6173E3EEB6852 /* ExerciseTutorialSheet.swift */,
+				C336889514D027D2A04F29A4 /* GoalsView.swift */,
+				50A270801BDCE0E59A4B2EA1 /* LogExerciseSheet.swift */,
+				D3AE07A13A419CC1D73CAF87 /* ProgressChartsView.swift */,
+				980B8D09E929D868814DA9C2 /* TodayView.swift */,
+				2B13D1524314CB0ED49C4A0B /* WeeklySummaryView.swift */,
+				AB71552FBCBE2E19A5716253 /* WorkoutDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF1ECED57ABC92CB012204C6 = {
+			isa = PBXGroup;
+			children = (
+				1A43C3F43A5A1769870DB9F5 /* SpeedLabJr */,
+				E988BBC12D45B83FF48717F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE759F4C672A6C731BD09C36 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7C3D05ECEE67DB5C3C990103 /* ScheduleManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E988BBC12D45B83FF48717F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1A4D3B814C5EF29119F930C /* SpeedLabJr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		900666FE68FFEF68C2D016B6 /* SpeedLabJr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7932D9B215B5B14A9DA0BBB3 /* Build configuration list for PBXNativeTarget "SpeedLabJr" */;
+			buildPhases = (
+				D3D5166D4D5393E35F6EAC15 /* Sources */,
+				B4EF969604838B5C96F21FCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeedLabJr;
+			packageProductDependencies = (
+			);
+			productName = SpeedLabJr;
+			productReference = A1A4D3B814C5EF29119F930C /* SpeedLabJr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E56E756C225A28D7B7694EAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = F98F12F8D2A488FD688D1F40 /* Build configuration list for PBXProject "SpeedLabJr" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1ECED57ABC92CB012204C6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E988BBC12D45B83FF48717F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				900666FE68FFEF68C2D016B6 /* SpeedLabJr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4EF969604838B5C96F21FCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502197AADE9A4566251247B9 /* 60m-repeats.mp4 in Resources */,
+				93D4040D8A131039E5DEDADB /* 90-90-hip-stretch.mp4 in Resources */,
+				CCDE8D77147DAD1190C15702 /* Assets.xcassets in Resources */,
+				4EF6CC0EF5A806B46D423105 /* a-skips.mp4 in Resources */,
+				4CBCA9E274C2D9D18955E84F /* acceleration-sprints.mp4 in Resources */,
+				5914E0955B52898B1865F8D6 /* ankle-circles.mp4 in Resources */,
+				6D24FE507EF57193E9AC0F3E /* arm-circles.mp4 in Resources */,
+				F64BB2811FBD5E723EF7C2A9 /* b-skips.mp4 in Resources */,
+				ABD6685EB12712FA3684139E /* bodyweight-squats.mp4 in Resources */,
+				80EB1B204D0118D0DE3F2054 /* bounding.mp4 in Resources */,
+				7881266320F972D633A108E7 /* broad-jumps.mp4 in Resources */,
+				E4694D1C9AE6805E4110CB8A /* butt-kicks.mp4 in Resources */,
+				9A2D1C61602E2F4D7CEA6BD5 /* carioca-grapevine.mp4 in Resources */,
+				E6E17A9F8F356215C0F8BA2B /* cat-cow-stretch.mp4 in Resources */,
+				D818FDA31C287B09FFB6893B /* childs-pose.mp4 in Resources */,
+				0BCB5ACB6AAE81174CFE5725 /* dead-bug.mp4 in Resources */,
+				7F49A6446D2184C2B76911E8 /* easy-jog-or-brisk-walk.mp4 in Resources */,
+				0859BC9A2E21C8DFD770F586 /* easy-jog.mp4 in Resources */,
+				DDF88B680FEAE178E7146ACC /* easy-walk.mp4 in Resources */,
+				EB1CCE9FC2F9A2BBF798CF01 /* falling-starts.mp4 in Resources */,
+				F44C667115015A33F3AEE5D6 /* flying-20s.mp4 in Resources */,
+				352921FC8F890AED45FEBD49 /* glute-bridges.mp4 in Resources */,
+				330C9A0C5E5A84EC630E45C4 /* hamstring-stretch-standing.mp4 in Resources */,
+				615C140C229C295BE7330D37 /* heel-to-toe-walk-tightrope.mp4 in Resources */,
+				8AB3BF9525FA9123758055A5 /* high-knees.mp4 in Resources */,
+				E367725D3BF80C56890C2CA1 /* hip-circles.mp4 in Resources */,
+				7592F870CAED4597B79B2190 /* hip-flexor-lunge-and-reach.mp4 in Resources */,
+				DEBD955B9E3B061B39F99C91 /* hip-flexor-stretch-lunge.mp4 in Resources */,
+				F9505A5EAACC73BEB79DF3B3 /* inchworm-walk-outs.mp4 in Resources */,
+				94B60F31E1F1167A45D43F93 /* lateral-hops-over-line.mp4 in Resources */,
+				D6B9C2CA13023FC64CF53701 /* leg-swings-front-back.mp4 in Resources */,
+				CA5DA29504B7001DB25DE9C2 /* pigeon-pose.mp4 in Resources */,
+				22329E48A3681565E21AB8E1 /* plank-hold.mp4 in Resources */,
+				37812F01AEBDF79941140945 /* pogo-hops.mp4 in Resources */,
+				20689393A47C4A663856C2ED /* reverse-lunges.mp4 in Resources */,
+				F9B729966D1CC1CB76C75F93 /* sample.mp4 in Resources */,
+				CA5EB6DD360747D6C159C529 /* seated-hamstring-stretch.mp4 in Resources */,
+				6E545986CAE7EDF1FAAD4F31 /* side-plank.mp4 in Resources */,
+				472739267B7BEFFC2C5ACF23 /* single-leg-balance.mp4 in Resources */,
+				8B5A403AE4A74CB89A81417E /* single-leg-rdl-bodyweight.mp4 in Resources */,
+				0D9E8BBE216906B220CA5677 /* standing-calf-stretch.mp4 in Resources */,
+				3BD3740D2DB94FBA840DE6D1 /* standing-quad-stretch.mp4 in Resources */,
+				EBC59EE650E57701AEAD9DCD /* stride-outs.mp4 in Resources */,
+				3656D48EBA3B4927E8B4F36E /* thread-the-needle.mp4 in Resources */,
+				F93CE8664917A89E1F29ADE2 /* walking-lunges.mp4 in Resources */,
+				3D7001C7C925BB6300B3564A /* worlds-greatest-stretch.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3D5166D4D5393E35F6EAC15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A7DDAAF9C21FF743D6C72F7 /* AnimalSpeedComparison.swift in Sources */,
+				87CBCDE027E59FD07DF1A803 /* CalendarView.swift in Sources */,
+				396F78332988F6164073379D /* ContentView.swift in Sources */,
+				683640EA5E303B9EBEED90AD /* ExerciseLog.swift in Sources */,
+				162EE1358BF5E73767DE1E84 /* ExerciseTutorialSheet.swift in Sources */,
+				0E7F68168ADAAC8AE08EE5FA /* GoalsView.swift in Sources */,
+				C147C40A2430916B89C2735D /* LogExerciseSheet.swift in Sources */,
+				A1DE84362F7A0B6FAA92B551 /* ProgressChartsView.swift in Sources */,
+				0A8F8AA6C03D344B414493F9 /* ScheduleManager.swift in Sources */,
+				7FDEEEE519B3A702253D53F8 /* SpeedLabJrApp.swift in Sources */,
+				D7059FE9A90AE9355C675412 /* TodayView.swift in Sources */,
+				E9B9031D6A24E4278B32630D /* UserGoal.swift in Sources */,
+				C616ACB9D0DFD1DE017D2FB4 /* WeeklySummaryView.swift in Sources */,
+				174E09CD880B80AFE7DECEFF /* WorkoutDetailView.swift in Sources */,
+				2C235AB089A44C6C9A1D6787 /* WorkoutProgram.swift in Sources */,
+				F9A61019368A9667BFC0644F /* WorkoutSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04325D640D7F4B4C1DDC8606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = SpeedLabJr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.speedlab.SpeedLabJr;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B923B6FEA0310F8DCD1303B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		BD3901236BC5AAAB6FE74AB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		E90436B73DEFA77634FAF42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = SpeedLabJr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.speedlab.SpeedLabJr;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7932D9B215B5B14A9DA0BBB3 /* Build configuration list for PBXNativeTarget "SpeedLabJr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04325D640D7F4B4C1DDC8606 /* Debug */,
+				E90436B73DEFA77634FAF42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F98F12F8D2A488FD688D1F40 /* Build configuration list for PBXProject "SpeedLabJr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3901236BC5AAAB6FE74AB5 /* Debug */,
+				3B923B6FEA0310F8DCD1303B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E56E756C225A28D7B7694EAF /* Project object */;
+}

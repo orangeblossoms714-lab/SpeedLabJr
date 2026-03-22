@@ -11,6 +11,7 @@ struct ProgressChartsView: View {
 
     @Query(sort: \WorkoutSession.date)  private var sessions: [WorkoutSession]
     @Query(sort: \ExerciseLog.loggedAt) private var allLogs: [ExerciseLog]
+    @Query private var allGoals: [UserGoal]
 
     @State private var selectedDay: Int = 0  // 0 = all days
     @State private var selectedExercise: String = ""
@@ -19,6 +20,14 @@ struct ProgressChartsView: View {
 
     private var weeklyStats: [ScheduleManager.WeeklyStats] {
         ScheduleManager.weeklyStats(from: sessions)
+    }
+    
+    private var weeklyTarget: Double {
+        allGoals.first(where: { $0.typeRaw == "weeklyWorkouts" })?.targetValue ?? 4.0
+    }
+    
+    private var exerciseTarget: Double? {
+        allGoals.first(where: { $0.typeRaw == "exerciseTarget" && $0.exerciseName == selectedExercise })?.targetValue
     }
 
     private var completedSessions: [WorkoutSession] {
@@ -128,8 +137,8 @@ struct ProgressChartsView: View {
                         .cornerRadius(4)
                     }
 
-                    // Target line at 4 workouts
-                    RuleMark(y: .value("Target", 4))
+                    // Target line
+                    RuleMark(y: .value("Target", weeklyTarget))
                         .foregroundStyle(Color.orange.opacity(0.6))
                         .lineStyle(StrokeStyle(lineWidth: 1.5, dash: [5, 3]))
                         .annotation(position: .trailing) {
@@ -239,6 +248,17 @@ struct ProgressChartsView: View {
                         yEnd: .value(label, log.chartValue)
                     )
                     .foregroundStyle(Color.orange.opacity(0.12).gradient)
+                }
+                
+                if let target = exerciseTarget {
+                    RuleMark(y: .value("Goal", target))
+                        .foregroundStyle(Color.blue.opacity(0.8))
+                        .lineStyle(StrokeStyle(lineWidth: 2, dash: [5, 5]))
+                        .annotation(position: .top, alignment: .leading) {
+                            Text("Target")
+                                .font(.caption2)
+                                .foregroundColor(.blue)
+                        }
                 }
             }
             .chartXAxis {
@@ -370,5 +390,5 @@ struct DayFilterChip: View {
 
 #Preview {
     ProgressChartsView()
-        .modelContainer(for: [WorkoutSession.self, ExerciseLog.self], inMemory: true)
+        .modelContainer(for: [WorkoutSession.self, ExerciseLog.self, UserGoal.self], inMemory: true)
 }

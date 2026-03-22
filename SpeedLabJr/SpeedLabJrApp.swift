@@ -12,7 +12,7 @@ struct SpeedLabJrApp: App {
     init() {
         do {
             container = try ModelContainer(
-                for: WorkoutSession.self, ExerciseLog.self,
+                for: WorkoutSession.self, ExerciseLog.self, UserGoal.self,
                 configurations: ModelConfiguration(isStoredInMemoryOnly: false)
             )
         } catch {
