@@ -9,6 +9,8 @@ import SwiftData
 struct TodayView: View {
 
     @Query(sort: \WorkoutSession.date) private var sessions: [WorkoutSession]
+    @Query private var goals: [UserGoal]
+    
     @State private var showWorkout = false
     @State private var showSkipConfirm = false
     @State private var showMarkDoneConfirm = false
@@ -217,6 +219,8 @@ struct TodayView: View {
 
     private var programPhaseCard: some View {
         let week = ScheduleManager.weekNumber(for: Date())
+        let streak = ScheduleManager.currentStreak(from: sessions, goals: goals)
+        
         return HStack(spacing: 12) {
             Image(systemName: "flag.fill")
                 .font(.title3)
@@ -229,6 +233,19 @@ struct TodayView: View {
                     .foregroundColor(.secondary)
             }
             Spacer()
+            
+            if streak > 0 {
+                HStack(spacing: 4) {
+                    Text("🔥")
+                    Text("\(streak) Week\(streak == 1 ? "" : "s")")
+                        .font(.footnote.weight(.bold))
+                        .foregroundColor(.orange)
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(Color.orange.opacity(0.15))
+                .clipShape(Capsule())
+            }
         }
         .padding()
         .background(Color(.secondarySystemBackground))

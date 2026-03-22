@@ -18,6 +18,10 @@ struct WorkoutDetailView: View {
     @State private var showSkipAlert = false
     @State private var showUndoAlert  = false
     @State private var expandedSections: Set<String> = []
+    
+    // Gamification & Timers
+    @State private var restTimer = RestTimerManager()
+    @State private var showConfetti = false
 
     private var workoutDay: WorkoutDay? { session.workoutDay }
     private var color: Color { workoutDay?.color ?? .orange }
@@ -32,6 +36,14 @@ struct WorkoutDetailView: View {
                     statusBar
                     Divider()
                     sectionsContent
+                }
+            }
+            .overlay(
+                ConfettiView(isFiring: showConfetti)
+            )
+            .safeAreaInset(edge: .bottom) {
+                if restTimer.isActive {
+                    restTimerBanner
                 }
             }
             .navigationTitle("Day \(session.dayNumber)")
@@ -168,6 +180,9 @@ struct WorkoutDetailView: View {
                     color: color,
                     onLog: { exercise in
                         logTargetExercise = exercise
+                    },
+                    onRest: { seconds in
+                        restTimer.start(seconds: seconds)
                     }
                 )
                 Divider()
@@ -189,6 +204,51 @@ struct WorkoutDetailView: View {
     private func markDone() {
         session.status = .completed
         session.completedAt = Date()
+        
+        // Trigger confetti gamification
+        showConfetti = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            showConfetti = false
+            dismiss()
+        }
+    }
+    
+    // MARK: - Rest Timer Banner
+    
+    private var restTimerBanner: some View {
+        HStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Resting...")
+                    .font(.caption.weight(.bold))
+                    .foregroundColor(.secondary)
+                Text(restTimer.timeString)
+                    .font(.title2.monospacedDigit().weight(.black))
+            }
+            Spacer()
+            
+            Button("+15s") {
+                withAnimation { restTimer.addTime(seconds: 15) }
+            }
+            .font(.subheadline.weight(.bold))
+            .foregroundColor(color)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(color.opacity(0.15))
+            .clipShape(Capsule())
+            
+            Button("Skip") {
+                withAnimation { restTimer.skip() }
+            }
+            .font(.subheadline.weight(.semibold))
+            .foregroundColor(.white)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(Color.red)
+            .clipShape(Capsule())
+        }
+        .padding()
+        .background(Color(.systemBackground).shadow(color: .black.opacity(0.1), radius: 10, y: -5))
+        .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 }
 
@@ -200,6 +260,7 @@ struct SectionBlock: View {
     let session: WorkoutSession
     let color: Color
     let onLog: (Exercise) -> Void
+    let onRest: (Int) -> Void
 
     @State private var isExpanded = true
 
@@ -240,7 +301,8 @@ struct SectionBlock: View {
                             exercise: exercise,
                             log: session.log(for: exercise.name),
                             color: color,
-                            onLog: { onLog(exercise) }
+                            onLog: { onLog(exercise) },
+                            onRest: { onRest(60) } // Default 60s rest
                         )
                         if exercise.id != section.exercises.last?.id {
                             Divider().padding(.leading, 56)
@@ -260,6 +322,7 @@ struct ExerciseRow: View {
     let log: ExerciseLog?
     let color: Color
     let onLog: () -> Void
+    let onRest: () -> Void
 
     @State private var showTutorial = false
 
@@ -311,16 +374,29 @@ struct ExerciseRow: View {
                 }
 
                 if exercise.logType != .none {
-                    Button(action: onLog) {
-                        Text(log == nil ? "Log" : "Edit")
-                            .font(.caption.weight(.semibold))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 4)
-                            .background(log == nil ? color : Color.green)
-                            .clipShape(Capsule())
+                    HStack(spacing: 8) {
+                        Button(action: onRest) {
+                            Image(systemName: "timer")
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(color)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 6)
+                                .background(color.opacity(0.15))
+                                .clipShape(Capsule())
+                        }
+                        .buttonStyle(.borderless)
+
+                        Button(action: onLog) {
+                            Text(log == nil ? "Log" : "Edit")
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 6)
+                                .background(log == nil ? color : Color.green)
+                                .clipShape(Capsule())
+                        }
+                        .buttonStyle(.borderless)
                     }
-                    .buttonStyle(.borderless)
                 }
             }
         }

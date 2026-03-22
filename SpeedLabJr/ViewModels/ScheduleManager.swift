@@ -165,4 +165,28 @@ final class ScheduleManager {
 
         return stats
     }
+
+    // MARK: - Gamification (Streaks)
+
+    /// Calculates the current weekly consistency streak based on the target weekly goal.
+    static func currentStreak(from all: [WorkoutSession], goals: [UserGoal]) -> Int {
+        let weeklyTarget = Int(goals.first(where: { $0.typeRaw == "weeklyWorkouts" })?.targetValue ?? 4.0)
+        
+        let stats = weeklyStats(from: all).sorted { $0.weekNumber > $1.weekNumber }
+        let currentWeek = weekNumber(for: Date())
+        
+        var streak = 0
+        for w in stats {
+            if w.completed >= weeklyTarget {
+                streak += 1
+            } else if w.weekNumber == currentWeek {
+                // If it's the current week and not met yet, it doesn't break the streak (week isn't over!)
+                continue
+            } else {
+                // A past week was missed. Streak broken!
+                break
+            }
+        }
+        return streak
+    }
 }
