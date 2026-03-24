@@ -7,7 +7,9 @@ os.makedirs(xcassets, exist_ok=True)
 # Process any PNG file located in the artifact directory
 for p in glob.glob(f"{brain_dir}/*.png"):
     fn = os.path.basename(p)
-    base = fn.split("_1_")[0]
+    base = fn.replace(".png", "")
+    if "_1_" in base and len(base.split("_1_")) > 1:
+        base = base.split("_1_")[0] + "_1"
     
     # Check for specific variations like squat_step_2_ or high_knees...
     if "_2_" in fn: base = fn.split("_2_")[0] + "_2"
