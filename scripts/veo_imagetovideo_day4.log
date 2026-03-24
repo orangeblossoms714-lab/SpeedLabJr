@@ -1,0 +1,22 @@
+Starting Image-To-Video batch generation...
+
+--- Generating: World's Greatest Stretch -> worlds-greatest-stretch.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/pbv4o4i1xshz'
+
+--- Generating: 90/90 Hip Stretch -> 90-90-hip-stretch.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/o04w9uygdlll'
+
+--- Generating: Hip Flexor Lunge + Reach -> hip-flexor-lunge-and-reach.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/s1emlxo9ft2b'
+
+--- Generating: Thread the Needle -> thread-the-needle.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/hja1ohbigsss'
+
+--- Generating: Ankle Circles -> ankle-circles.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/plfm64q2p12n'
+
+--- Generating: Single-Leg RDL (bodyweight) -> single-leg-rdl-bodyweight.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/1b2mm79hief8'
+
+--- Generating: Heel-to-Toe Walk (tightrope) -> heel-to-toe-walk-tightrope.mp4 ---
+Operation Info: name='models/veo-2.0-generate-001/operations/f9hqtc3lad8p'

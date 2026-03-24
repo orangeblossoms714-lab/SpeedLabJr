@@ -274,11 +274,12 @@ struct TodayView: View {
                         ForEach(weekly) { record in
                             let def = AchievementEngine.get(record.achievementID)
                             VStack(spacing: 6) {
-                                Text(def.emoji)
-                                    .font(.system(size: 32))
+                                Image(def.imageName)
+                                    .resizable()
+                                    .scaledToFit()
                                     .frame(width: 60, height: 60)
-                                    .background(Color.yellow.opacity(0.2))
                                     .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.yellow.opacity(0.4), lineWidth: 2))
                                 
                                 Text(def.name)
                                     .font(.caption2.weight(.bold))

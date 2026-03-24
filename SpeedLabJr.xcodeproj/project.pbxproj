@@ -48,6 +48,7 @@
 		8B5A403AE4A74CB89A81417E /* single-leg-rdl-bodyweight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A48F166AA69E5D44C17D5035 /* single-leg-rdl-bodyweight.mp4 */; };
 		93D4040D8A131039E5DEDADB /* 90-90-hip-stretch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CF8F8AB2A701281A650C0 /* 90-90-hip-stretch.mp4 */; };
 		94B60F31E1F1167A45D43F93 /* lateral-hops-over-line.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 85ED4DAAF3DBB97BF5CC4A90 /* lateral-hops-over-line.mp4 */; };
+		94B9818928397FD08C62CA7D /* TutorialDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB755DE6531054C96BA2E96F /* TutorialDatabase.swift */; };
 		9A2D1C61602E2F4D7CEA6BD5 /* carioca-grapevine.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD8FEEB470EFBB859EE03E39 /* carioca-grapevine.mp4 */; };
 		A1DE84362F7A0B6FAA92B551 /* ProgressChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AE07A13A419CC1D73CAF87 /* ProgressChartsView.swift */; };
 		ABD6685EB12712FA3684139E /* bodyweight-squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9875C23D719DD84ADDF9C70D /* bodyweight-squats.mp4 */; };
@@ -142,6 +143,7 @@
 		D7CAA88277B3B604FE2D388F /* hip-flexor-lunge-and-reach.mp4 */ = {isa = PBXFileReference; path = "hip-flexor-lunge-and-reach.mp4"; sourceTree = "<group>"; };
 		D9581DA79C6FA618D3F781B6 /* easy-jog.mp4 */ = {isa = PBXFileReference; path = "easy-jog.mp4"; sourceTree = "<group>"; };
 		DBCBD7B8A5A7184092BC49BC /* b-skips.mp4 */ = {isa = PBXFileReference; path = "b-skips.mp4"; sourceTree = "<group>"; };
+		EB755DE6531054C96BA2E96F /* TutorialDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDatabase.swift; sourceTree = "<group>"; };
 		ED1783BB4AEB0ADD7C296928 /* sample.mp4 */ = {isa = PBXFileReference; path = sample.mp4; sourceTree = "<group>"; };
 		F4CBD42FFDE1716B7C346300 /* bounding.mp4 */ = {isa = PBXFileReference; path = bounding.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 				376B23956B7C1667F794B552 /* AchievementRecord.swift */,
 				9AC3DECE858DA02FC006FF9F /* AnimalSpeedComparison.swift */,
 				1B0C14F59EBE3CD7BA67865F /* ExerciseLog.swift */,
+				EB755DE6531054C96BA2E96F /* TutorialDatabase.swift */,
 				9FAF25E6698F0733C157FC52 /* UserGoal.swift */,
 				B95EAAD06B9D37DF853C1237 /* WorkoutProgram.swift */,
 				675BAD0829A815CA19A4DCBB /* WorkoutSession.swift */,
@@ -396,6 +399,7 @@
 				0A8F8AA6C03D344B414493F9 /* ScheduleManager.swift in Sources */,
 				7FDEEEE519B3A702253D53F8 /* SpeedLabJrApp.swift in Sources */,
 				D7059FE9A90AE9355C675412 /* TodayView.swift in Sources */,
+				94B9818928397FD08C62CA7D /* TutorialDatabase.swift in Sources */,
 				E9B9031D6A24E4278B32630D /* UserGoal.swift in Sources */,
 				C616ACB9D0DFD1DE017D2FB4 /* WeeklySummaryView.swift in Sources */,
 				174E09CD880B80AFE7DECEFF /* WorkoutDetailView.swift in Sources */,

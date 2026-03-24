@@ -169,8 +169,11 @@ struct AchievementBadgeView: View {
                     .frame(width: 80, height: 80)
                     .shadow(color: shadowColor, radius: count >= 20 ? 12 : 5, y: 4)
                 
-                Text(def.emoji)
-                    .font(.system(size: 36))
+                Image(def.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70, height: 70)
+                    .clipShape(Circle())
                 
                 if count > 0 {
                     Text("x\(count)")

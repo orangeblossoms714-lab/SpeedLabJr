@@ -8,24 +8,24 @@ struct AchievementDefinition: Identifiable, Hashable {
     let id: String
     let name: String
     let description: String
-    let emoji: String
+    let imageName: String
 }
 
 final class AchievementEngine {
     
     static let allAchievements: [AchievementDefinition] = [
-        AchievementDefinition(id: "earlyBird", name: "Early Bird", description: "Log a workout before 8 AM.", emoji: "🌅"),
-        AchievementDefinition(id: "nightOwl", name: "Night Owl", description: "Log a workout after 8 PM.", emoji: "🦉"),
-        AchievementDefinition(id: "weekendWarrior", name: "Weekend Warrior", description: "Complete a workout on a weekend.", emoji: "🗓️"),
-        AchievementDefinition(id: "perfectWeek", name: "Perfect Week", description: "Complete 4 workouts in a single week.", emoji: "💯"),
-        AchievementDefinition(id: "consistencyKing", name: "Consistency King", description: "Hit your custom weekly workouts goal.", emoji: "👑"),
-        AchievementDefinition(id: "recoveryMaster", name: "Recovery Master", description: "Complete a Recovery & Movement day.", emoji: "🧘‍♂️"),
-        AchievementDefinition(id: "volumeJunkie", name: "Volume Junkie", description: "Log over 100 reps in a single day.", emoji: "📈"),
-        AchievementDefinition(id: "heavyLifter", name: "Heavy Lifter", description: "Log a weighted exercise at 100 lbs or more.", emoji: "🏋️‍♂️"),
-        AchievementDefinition(id: "speedDemon", name: "Speed Demon", description: "Log a sprint time > 25 km/h.", emoji: "⚡"),
-        AchievementDefinition(id: "distanceRunner", name: "Distance Runner", description: "Log over 400m of sprinting in a day.", emoji: "🏃‍♂️"),
-        AchievementDefinition(id: "coreCrusher", name: "Core Crusher", description: "Log 3 or more distinct core exercises.", emoji: "🧱"),
-        AchievementDefinition(id: "theFinisher", name: "The Finisher", description: "Check off every exercise in a workout.", emoji: "🏁")
+        AchievementDefinition(id: "earlyBird", name: "Early Bird", description: "Log a workout before 8 AM.", imageName: "early_bird_trophy"),
+        AchievementDefinition(id: "nightOwl", name: "Night Owl", description: "Log a workout after 8 PM.", imageName: "night_owl_trophy"),
+        AchievementDefinition(id: "weekendWarrior", name: "Weekend Warrior", description: "Complete a workout on a weekend.", imageName: "weekend_warrior_trophy"),
+        AchievementDefinition(id: "perfectWeek", name: "Perfect Week", description: "Complete 4 workouts in a single week.", imageName: "perfect_week_trophy"),
+        AchievementDefinition(id: "consistencyKing", name: "Consistency King", description: "Hit your custom weekly workouts goal.", imageName: "consistency_king_trophy"),
+        AchievementDefinition(id: "recoveryMaster", name: "Recovery Master", description: "Complete a Recovery & Movement day.", imageName: "recovery_master_trophy"),
+        AchievementDefinition(id: "volumeJunkie", name: "Volume Junkie", description: "Log over 100 reps in a single day.", imageName: "volume_junkie_trophy"),
+        AchievementDefinition(id: "heavyLifter", name: "Heavy Lifter", description: "Log a weighted exercise at 100 lbs or more.", imageName: "heavy_lifter_trophy"),
+        AchievementDefinition(id: "speedDemon", name: "Speed Demon", description: "Log a sprint time > 25 km/h.", imageName: "speed_demon_trophy"),
+        AchievementDefinition(id: "distanceRunner", name: "Distance Runner", description: "Log over 400m of sprinting in a day.", imageName: "distance_runner_trophy"),
+        AchievementDefinition(id: "coreCrusher", name: "Core Crusher", description: "Log 3 or more distinct core exercises.", imageName: "core_crusher_trophy"),
+        AchievementDefinition(id: "theFinisher", name: "The Finisher", description: "Check off every exercise in a workout.", imageName: "the_finisher_trophy")
     ]
     
     @MainActor

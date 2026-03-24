@@ -1,10 +1,9 @@
 // ExerciseTutorialSheet.swift
 // SpeedLabJr
 //
-// In-app Video player for AI generated exercise tutorials.
+// In-app visual and text tutorials for exercises.
 
 import SwiftUI
-import AVKit
 
 // MARK: - ExerciseTutorialSheet
 
@@ -12,34 +11,6 @@ struct ExerciseTutorialSheet: View {
 
     let exercise: Exercise
     @Environment(\.dismiss) private var dismiss
-    
-    // Auto-playing looping video player
-    @State private var player: AVPlayer?
-
-    private func setupPlayer() {
-        let filename = exercise.name.lowercased()
-            .replacingOccurrences(of: " ", with: "-")
-            .replacingOccurrences(of: "/", with: "-")
-            .replacingOccurrences(of: "(", with: "")
-            .replacingOccurrences(of: ")", with: "")
-            .replacingOccurrences(of: "+", with: "and")
-            .replacingOccurrences(of: "'", with: "")
-            .replacingOccurrences(of: "---", with: "-")
-            .replacingOccurrences(of: "--", with: "-")
-        
-        if let url = Bundle.main.url(forResource: filename, withExtension: "mp4") {
-            let p = AVPlayer(url: url)
-            p.actionAtItemEnd = .none // loop
-            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: p.currentItem, queue: .main) { _ in
-                p.seek(to: .zero)
-                p.play()
-            }
-            player = p
-            p.play()
-        } else {
-            print("Video not found: \(filename).mp4")
-        }
-    }
 
     var body: some View {
         NavigationStack {
@@ -50,7 +21,7 @@ struct ExerciseTutorialSheet: View {
                         Circle()
                             .fill(Color.orange.opacity(0.15))
                             .frame(width: 40, height: 40)
-                        Image(systemName: "play.circle.fill")
+                        Image(systemName: "figure.run")
                             .font(.title2)
                             .foregroundColor(.orange)
                     }
@@ -68,35 +39,76 @@ struct ExerciseTutorialSheet: View {
 
                 Divider()
 
-                // Embedded Video Player
-                if let player = player {
-                    VideoPlayer(player: player)
-                        .ignoresSafeArea(edges: .bottom)
-                } else {
-                    VStack {
-                        Spacer()
-                        Image(systemName: "video.slash")
-                            .font(.largeTitle)
-                            .foregroundColor(.secondary)
-                        Text("Video tutorial not available.")
-                            .foregroundColor(.secondary)
-                            .padding(.top, 8)
-                        Spacer()
+                ScrollView {
+                    let tutorial = TutorialDatabase.tutorial(for: exercise.name)
+                    
+                    VStack(alignment: .leading, spacing: 24) {
+                        if !tutorial.images.isEmpty {
+                            TabView {
+                                ForEach(tutorial.images, id: \.self) { imgName in
+                                    Image(imgName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight: 280)
+                                        .padding()
+                                }
+                            }
+                            .tabViewStyle(.page(indexDisplayMode: .always))
+                            .frame(height: 280)
+                            .indexViewStyle(.page(backgroundDisplayMode: .always))
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(12)
+                        } else {
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color(.secondarySystemBackground))
+                                .frame(height: 180)
+                                .overlay(
+                                    VStack(spacing: 12) {
+                                        Image(systemName: "photo.badge.plus")
+                                            .font(.largeTitle)
+                                            .foregroundStyle(.tertiary)
+                                        Text("Visual sequence coming soon")
+                                            .font(.caption)
+                                            .foregroundStyle(.tertiary)
+                                    }
+                                )
+                        }
+                        
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Execution")
+                                .font(.headline)
+                            
+                            // Handling instructions and bold focus cleanly
+                            let blocks = tutorial.instructions.components(separatedBy: "\n\n")
+                            ForEach(blocks, id: \.self) { block in
+                                if block.isEmpty {
+                                    EmptyView()
+                                } else if block.hasPrefix("**Focus:**") {
+                                    Text(block.replacingOccurrences(of: "**Focus:** ", with: "🎯 Focus: "))
+                                        .font(.subheadline).bold()
+                                        .foregroundColor(.orange)
+                                        .padding(.top, 4)
+                                } else {
+                                    Text(block)
+                                        .font(.body)
+                                        .foregroundColor(.secondary)
+                                        .lineSpacing(4)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        Spacer(minLength: 40)
                     }
+                    .padding()
                 }
             }
             .navigationTitle("Tutorial")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
                 }
-            }
-            .onAppear {
-                setupPlayer()
-            }
-            .onDisappear {
-                player?.pause()
             }
         }
         .presentationDetents([.large])
