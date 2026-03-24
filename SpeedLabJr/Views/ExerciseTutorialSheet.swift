@@ -43,37 +43,6 @@ struct ExerciseTutorialSheet: View {
                     let tutorial = TutorialDatabase.tutorial(for: exercise.name)
                     
                     VStack(alignment: .leading, spacing: 24) {
-                        if !tutorial.images.isEmpty {
-                            TabView {
-                                ForEach(tutorial.images, id: \.self) { imgName in
-                                    Image(imgName)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(maxHeight: 280)
-                                        .padding()
-                                }
-                            }
-                            .tabViewStyle(.page(indexDisplayMode: .always))
-                            .frame(height: 280)
-                            .indexViewStyle(.page(backgroundDisplayMode: .always))
-                            .background(Color(.secondarySystemBackground))
-                            .cornerRadius(12)
-                        } else {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(.secondarySystemBackground))
-                                .frame(height: 180)
-                                .overlay(
-                                    VStack(spacing: 12) {
-                                        Image(systemName: "photo.badge.plus")
-                                            .font(.largeTitle)
-                                            .foregroundStyle(.tertiary)
-                                        Text("Visual sequence coming soon")
-                                            .font(.caption)
-                                            .foregroundStyle(.tertiary)
-                                    }
-                                )
-                        }
-                        
                         VStack(alignment: .leading, spacing: 12) {
                             Text("Execution")
                                 .font(.headline)

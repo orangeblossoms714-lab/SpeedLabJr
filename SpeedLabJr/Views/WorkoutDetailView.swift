@@ -357,7 +357,7 @@ struct ExerciseRow: View {
                 Button {
                     showTutorial = true
                 } label: {
-                    Label("Watch tutorial", systemImage: "play.circle")
+                    Label("View tutorial", systemImage: "doc.text")
                         .font(.caption)
                         .foregroundColor(.blue)
                 }
