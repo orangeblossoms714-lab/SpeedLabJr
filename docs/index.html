@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speed Lab Jr — Support</title>
+  <meta name="description" content="Support page for Speed Lab Jr — the track and field training app for young athletes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a0f1e;
+      --blue: #1a3a6e;
+      --neon: #1e90ff;
+      --gold: #f0b429;
+      --text: #e2e8f0;
+      --muted: #8a9bb0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(30,144,255,0.12) 0%, transparent 70%);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(30,144,255,0.15);
+      color: var(--neon);
+      border: 1px solid rgba(30,144,255,0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a0f1e;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+
+    /* FAQ */
+    .section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      width: 100%;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 36px;
+    }
+
+    .faq-item {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .faq-item p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* CONTACT */
+    .contact-card {
+      background: rgba(30,144,255,0.07);
+      border: 1px solid rgba(30,144,255,0.15);
+      border-radius: 20px;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .contact-card h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .contact-card a.btn {
+      background: linear-gradient(135deg, var(--neon), #0066cc);
+      color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">⚡ Speed Lab <span>Jr</span></div>
+  </nav>
+
+  <div class="hero">
+    <div class="badge">App Support</div>
+    <h1>We're here to<br /><span>help you run faster.</span></h1>
+    <p>Find answers to common questions below, or reach out directly and we'll get back to you quickly.</p>
+    <a href="mailto:support@speedlabjr.app" class="btn">Contact Support</a>
+  </div>
+
+  <div class="section">
+    <div class="section-label">FAQ</div>
+    <h2>Common Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is Speed Lab Jr?</h3>
+      <p>Speed Lab Jr is a structured 4-day track and field training app designed for middle and high school athletes. It provides a weekly program covering sprint mechanics, plyometrics, and active recovery — with built-in coaching cues for every exercise.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What equipment do I need?</h3>
+      <p>Just a pair of running shoes and access to a track or open field. No gym equipment or membership is required.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I log a workout?</h3>
+      <p>Tap on today's workout from the home screen, tap into an exercise, and use the "Log" button to record your sets. When finished, hit "Mark Done" to complete the session and unlock any earned achievements.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do achievements work?</h3>
+      <p>Speed Lab Jr has 12 track-and-field themed achievements. Every time you meet a qualifying condition (e.g., training before 8 AM, completing all 4 days in a week), you earn a badge. Earn 1x for Bronze, 5x for Silver, 10x for Gold, and 20x for Diamond.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I reset my progress?</h3>
+      <p>Currently, progress is stored locally on your device. To reset, delete and reinstall the app. We're working on cloud sync and profile management for a future update.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I report a bug?</h3>
+      <p>Email us at <a href="mailto:support@speedlabjr.app" style="color: var(--neon);">support@speedlabjr.app</a> with a brief description of the issue and your iOS version. Screenshots are always helpful!</p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: 0;">
+    <div class="contact-card">
+      <h2>Still need help?</h2>
+      <p>Our support team typically responds within 1–2 business days. Please include your iOS version and a brief description of your issue.</p>
+      <a href="mailto:support@speedlabjr.app" class="btn">Email Us →</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Speed Lab Jr · <a href="mailto:support@speedlabjr.app">support@speedlabjr.app</a></p>
+  </footer>
+
+</body>
+</html>
