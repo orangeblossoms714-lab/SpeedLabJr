@@ -4,7 +4,8 @@ import base64
 import os
 import time
 
-API_KEY = "REDACTED_NVIDIA_API_KEY"
+import os
+API_KEY = os.environ.get("NVIDIA_API_KEY", "")
 MODEL = "stabilityai/stable-diffusion-3-medium"
 url = f"https://ai.api.nvidia.com/v1/genai/{MODEL}"
 brain_dir = "/Users/orangeblossom/.gemini/antigravity/brain/2f9e741b-72aa-4fed-b27a-f4267cc5bb01"
