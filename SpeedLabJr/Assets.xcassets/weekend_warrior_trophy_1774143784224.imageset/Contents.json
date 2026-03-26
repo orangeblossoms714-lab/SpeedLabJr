@@ -1,13 +1,21 @@
 {
-  "images": [
+  "images" : [
     {
-      "idiom": "universal",
-      "filename": "weekend_warrior_trophy_1774143784224.png",
-      "scale": "1x"
+      "filename" : "weekend_warrior_trophy_1774143784224.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
-  "info": {
-    "author": "xcode",
-    "version": 1
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
   }
 }
