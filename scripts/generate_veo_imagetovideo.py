@@ -4,7 +4,8 @@ from google import genai
 from google.genai import types
 from google import genai
 
-API_KEY = "REDACTED_GOOGLE_API_KEY"
+import os
+API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 
 screenshots_dir = os.path.expanduser("~/Documents/video screenshots")

@@ -2,7 +2,8 @@ import os
 import re
 import requests
 
-API_KEY = "REDACTED_GOOGLE_API_KEY"
+import os
+API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
 log_path = os.path.join(os.path.dirname(__file__), 'veo_imagetovideo_day4.log')
 videos_dir = os.path.join(os.path.dirname(__file__), '../SpeedLabJr/Videos')

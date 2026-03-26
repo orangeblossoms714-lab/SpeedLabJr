@@ -3,7 +3,7 @@ import sys
 
 try:
     from google import genai
-    client = genai.Client(api_key="REDACTED_GOOGLE_API_KEY")
+    client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY", ""))
     print("Client initialized")
     models = client.models.list()
     for m in models:

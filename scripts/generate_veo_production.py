@@ -3,7 +3,8 @@ import sys
 import time
 from google import genai
 
-API_KEY = "REDACTED_GOOGLE_API_KEY"
+import os
+API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 client = genai.Client(api_key=API_KEY)
 
 day4_exercises = {

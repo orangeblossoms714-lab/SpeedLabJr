@@ -5,7 +5,8 @@ import requests
 from google import genai
 from google.genai import types
 
-API_KEY = "REDACTED_GOOGLE_API_KEY"
+import os
+API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
 # Initialize Client
 client = genai.Client(api_key=API_KEY)
