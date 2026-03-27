@@ -22,8 +22,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Speed Lab Jr. may optionally read health data.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
